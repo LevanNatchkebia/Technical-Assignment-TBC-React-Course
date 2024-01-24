@@ -1,16 +1,22 @@
 
 /* DESKTOP STYLES */
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 body {
     background-color:  #161616;
-    color: white;
-    height: 100vh;
-    width: 100vw;
+    width: 100%;
+    color: #DBDBDB;
     font-family: 'Noto Sans Georgian", sans-serif';
+    
 }
 
 .header {
-    padding: 2rem;
+    width: 100%;
+    padding: 1rem 2rem;
     position: sticky;
     background-color: #1A1E1F;
 }
@@ -52,14 +58,14 @@ body {
 }
 
 .section1_tech_knowledge {
-    background-color: #1A1E1F;
+    background-color: #2B2B2B;
 }
 
 .section1_upper_part {
     width: 100%;
     height: 352px;
     overflow: hidden;
-   position: relative;
+    position: relative;
 }
 
 .background_image {
@@ -75,3 +81,207 @@ body {
     margin: 0 auto;
     position: absolute;
 }
+
+.section1_lower_part {
+    margin-top: 3.8rem;
+    display: flex;
+    justify-content: center;
+    padding: 0 2rem;
+    padding-bottom: 4.2rem;
+    align-items: center;
+}
+
+.info_box {
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+}
+
+.propgram_description_txt {
+    font-size: 1.83em;
+    line-height: 150%;
+}
+
+.see_more_hyperlink {
+    color: #00A3E0;
+    font-size: 1.2em;
+    font-weight: 700;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    transition: 0.3s ease-in-out;
+    width: 200px;
+}
+
+.see_more_hyperlink:hover {
+    color: rgb(168, 168, 168);
+}
+
+.section2_learning_courses {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2rem;
+    margin-top: 3rem;
+}
+
+.section2_heading, .section3_heading {
+    display: flex;
+    width: clamp(300px, 1000px, 100%);
+    margin-bottom: 5rem;
+}
+
+h2 {
+    font-size: 1.5em;
+    font-weight: 400;
+}
+
+.grid_container {
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 20px 40px;
+}
+
+.course_card {
+    height: 414px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border-radius: 6px;
+    border: 1px solid gray;
+}
+
+.course_card_image{
+    height: 150px;
+}
+
+.course_info_txt, .more_course_details {
+    padding:0 1.4rem;
+}
+.course_info_txt {
+    display: flex;
+    flex-direction: column;
+    gap: 2.1rem;
+    margin-top: 2.3rem;
+    font-weight: 700;
+}
+.course_info_txt > h5 {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.course_info_txt > p {
+    font-size: 14px;
+    font-weight: 500;
+}
+.more_course_details {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.more_course_details > a {
+    color: #00A3E0;
+}
+
+.fa-arrow-right {
+    color: #00A3E0;
+    font-size: 1.2em;
+}
+
+.mutual_div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding-bottom: 1.8rem;
+}
+
+/* SLIDER SECTION */
+.right {
+    transform: rotate(-180deg);
+    right: 6rem;
+}
+
+.left {
+    left: 6rem;
+}
+
+.section3_project_partners {
+    margin-top: 3.6rem;
+    background-color: #2B2B2B;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.6rem;
+    padding-bottom: 5rem;
+}
+.slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    margin-top: 1.5rem;
+}
+
+.slider_arrow {
+    height: 34px;
+    width: 34px;
+    cursor: pointer;
+    position: absolute;
+}
+
+.slider_arrow > path {
+    stroke: white;
+}
+
+.slider_arrow:hover {
+    opacity: 0.7;
+}
+.marks {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.dot {
+    height: 6px;
+    width: 6px;
+    background-color: #DBDBDB;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: 1.5rem;
+}
+.active_mark {
+    background-color: white;
+}
+.project_partners {
+    width: 100%;
+    max-width: 1000px;
+
+}
+.slider_element {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    gap: 2rem;
+    width: 100%;
+    height: 80px;
+}
+
+
+.slider2, .slider3 {
+    display: none;
+}
+
+.slider_element {animation: fadeIn 2s;}
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+
