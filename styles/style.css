@@ -1,5 +1,6 @@
 
 /* DESKTOP STYLES */
+
 *, *::after, *::before {
     box-sizing: border-box;
     margin: 0;
@@ -17,8 +18,15 @@ body {
 .header {
     width: 100%;
     padding: 1rem 2rem;
-    position: sticky;
+    z-index: 99;
+    position: fixed;
+    height: 84px;
     background-color: #1A1E1F;
+}
+
+main {
+    position: relative;
+    top: 84px;
 }
 
 .header_div {
@@ -57,6 +65,9 @@ body {
     color: #00A3E0;
 }
 
+/* MAIN styles */
+
+
 .section1_tech_knowledge {
     background-color: #2B2B2B;
 }
@@ -72,14 +83,14 @@ body {
     width: 100%;
     margin-bottom: 20px;
     height: 352px;
-    object-fit: cover
-
+    object-fit: cover;
 }
 
 .heading_h1 {
     max-width:1000px;
-    margin: 0 auto;
     position: absolute;
+    top: 50%;
+    left: 30%;
 }
 
 .section1_lower_part {
@@ -127,7 +138,7 @@ body {
     margin-top: 3rem;
 }
 
-.section2_heading, .section3_heading {
+.section2_heading, .section3_heading, .section4_heading {
     display: flex;
     width: clamp(300px, 1000px, 100%);
     margin-bottom: 5rem;
@@ -152,7 +163,7 @@ h2 {
     display: flex;
     flex-direction: column;
     border-radius: 6px;
-    border: 1px solid gray;
+    border: 1px solid  rgb(83, 82, 82);
 }
 
 .course_card_image{
@@ -162,6 +173,7 @@ h2 {
 .course_info_txt, .more_course_details {
     padding:0 1.4rem;
 }
+
 .course_info_txt {
     display: flex;
     flex-direction: column;
@@ -169,6 +181,7 @@ h2 {
     margin-top: 2.3rem;
     font-weight: 700;
 }
+
 .course_info_txt > h5 {
     font-size: 18px;
     font-weight: 500;
@@ -178,6 +191,7 @@ h2 {
     font-size: 14px;
     font-weight: 500;
 }
+
 .more_course_details {
     display: flex;
     gap: 10px;
@@ -220,6 +234,7 @@ h2 {
     padding: 2.6rem;
     padding-bottom: 5rem;
 }
+
 .slider {
     display: flex;
     justify-content: center;
@@ -242,6 +257,7 @@ h2 {
 .slider_arrow:hover {
     opacity: 0.7;
 }
+
 .marks {
     display: flex;
     gap: 0.8rem;
@@ -255,14 +271,16 @@ h2 {
     cursor: pointer;
     margin-top: 1.5rem;
 }
+
 .active_mark {
     background-color: white;
 }
+
 .project_partners {
     width: 100%;
     max-width: 1000px;
-
 }
+
 .slider_element {
     display: flex;
     align-items: center;
@@ -271,17 +289,184 @@ h2 {
     gap: 2rem;
     width: 100%;
     height: 80px;
+    animation: fadeIn 3s;
 }
-
 
 .slider2, .slider3 {
     display: none;
 }
 
-.slider_element {animation: fadeIn 2s;}
 @keyframes fadeIn {
     0% {opacity: 0;}
     100% {opacity: 1;}
 }
 
+/* STYLES FOR FAQ */
 
+.section4_heading {
+    display: flex;
+    justify-content: space-between;
+    width: clamp(300px, 900px, 100%);
+    margin-bottom: 3.1rem;
+}
+
+.section4_faq {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2rem;
+    margin-top: 7rem;
+    margin-bottom: 9rem;
+}
+
+.all_question_hyperlink {
+    color: #00A3E0;
+    font-size: 1.2em;
+    font-weight: 700;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    transition: 0.3s ease-in-out;
+}
+
+.all_question_hyperlink:hover {
+    color: rgb(168, 168, 168);
+}
+
+.accordion_faq_content {
+    width: clamp(300px, 900px, 100%);
+}
+
+.accordion_btn {
+    background-color: transparent;
+    border: none;
+    color: #DBDBDB;
+    font-size: 1.15em;
+    font-family: 'Noto Sans Georgian", sans-serif';
+    margin-bottom: 2rem;
+    cursor: pointer;
+    transition: 0.4s;
+    width: 100%;
+    text-align: left;
+}
+
+.questions_content {
+    max-height: 0;
+    height: auto;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+}
+
+.questions_content.show {
+    max-height: 2000px; 
+    transition: max-height 3s ease-in-out; 
+}
+
+.questions_content > p {
+    font-size: 0.9em;
+    margin-bottom:2rem;
+    line-height: 180%;
+    max-height: auto;
+}
+
+.unorder_list_faq {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.accordion_faq_lists {
+    font-size: 0.9em;
+    line-height: 180%;
+}
+
+.important {
+    margin-top: 3rem;
+}
+
+.active_faq_btn {
+    display: block;
+}
+
+.accordion_btn::after {
+    content:'\02795';
+    font-size: 13px;
+    color: #DBDBDB;
+    float: right;
+    margin-left: 5px;
+}
+
+.underline {
+    height: 1px;
+    background-color: gray;
+    width: 100%;
+    margin-bottom:1.5rem ;
+}
+
+/* FOOTER STYLES */
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1A1E1F;
+    padding: 4rem 0;
+    width: 100%;
+}
+.footer_main_container {
+    max-width: 1000px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer_copyright {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.copyright {
+    font-size: 0.9em;
+}
+
+.footer_logo {
+    width: 106px;
+}
+
+.terms_policy {
+    color: #DBDBDB;
+    transition: 0.3s ease-in-out;
+    font-size: 0.9em;
+}
+
+.terms_policy:hover {
+    color: rgb(168, 168, 168);
+}
+
+.social_icons {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+.txt_us_mail {
+    padding: 0.7rem 2rem;
+    color: white;
+    background-color: #00A3E0;
+    border-radius: 6px;
+    transition: 0.3s ease-in-out;
+}
+
+.txt_us_mail:hover {
+    background-color: #DBDBDB;
+    color: gray;
+}
+
+.footer_social {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}

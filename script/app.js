@@ -146,4 +146,24 @@ dots.forEach((mark, index) => {
     })
 })
 
-setInterval(nextSlide, 3000);
+setInterval(nextSlide, 5000);
+
+
+// JS for FAQ accordion 
+const acc = document.querySelectorAll('.accordion_btn');
+const faqPanel = document.querySelectorAll('.questions_content');
+acc.forEach((accordion, index) => {
+    accordion.addEventListener('click', () => {
+        faqPanel[index].classList.toggle('active_faq_btn');
+        faqPanel[index].classList.toggle('show');
+    })
+})
+
+// header opacity 
+
+document.addEventListener('scroll', (e) => {
+    const header = document.querySelector('.header');
+    if (scrollY > 0) {
+        header.style.opacity = 0.9;
+    }
+});
