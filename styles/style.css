@@ -65,6 +65,55 @@ main {
     color: #00A3E0;
 }
 
+.burger_menu {
+    width: 26px;
+    height: 21px;
+    position: relative;
+    cursor: pointer;
+    /* display: none; */
+}
+
+.burger_bar {
+    height: 3px;
+    border-radius: 8px;
+    width: 100%;
+    position: absolute;
+    background-color: #DBDBDB;
+    transition: .3s ease-in-out;
+}
+
+.bar1 {
+    width: 50%;
+    top: 0;
+    left: 0;
+    transform-origin: left;
+}
+
+.rotate_bar1 {
+    rotate: 45deg;
+    transform: translate(50%, 50%);
+}
+
+.bar2 {
+    top: 50%;
+}
+
+.rotate_bar2 {
+    transform: rotate(-45deg);
+}
+
+.bar3 {
+    width: 50%;
+    bottom: 0;
+    right: 0;
+    transform-origin: right;
+}
+
+.rotate_bar3 {
+    rotate: 45deg;
+    transform: translate(-50%, -50%);
+}
+
 /* MAIN styles */
 
 
@@ -86,11 +135,24 @@ main {
     object-fit: cover;
 }
 
-.heading_h1 {
-    max-width:1000px;
+.heading_container {
     position: absolute;
+    left: 0; /* Adjust the distance from the left side */
     top: 50%;
-    left: 30%;
+    transform: translateY(-50%);
+    width:clamp(300px, 1140px, 61%);
+    display: flex;
+    justify-content: flex-end;
+}
+
+.heading_h1 {
+    font-size: 34px;
+    font-weight: 1000;
+    line-height: 180%;
+    margin-left:2rem ;
+}
+.heading_h1 > span {
+    font-size: 42px;
 }
 
 .section1_lower_part {
@@ -296,6 +358,10 @@ h2 {
     display: none;
 }
 
+.slider3 {
+    justify-content: center;
+}
+
 @keyframes fadeIn {
     0% {opacity: 0;}
     100% {opacity: 1;}
@@ -412,10 +478,12 @@ h2 {
     justify-content: center;
     align-items: center;
     background-color: #1A1E1F;
-    padding: 4rem 0;
+    padding: 1rem 2rem;
     width: 100%;
 }
 .footer_main_container {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
     max-width: 1000px;
     width: 100%;
     display: flex;
@@ -469,4 +537,96 @@ h2 {
     display: flex;
     flex-direction: column;
     gap: 3rem;
+}
+
+/* Media queries to make responsive web */
+
+@media screen and (max-width:900px) {
+    .grid_container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .course_card {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 890px) {
+
+    .slider_element {
+        display: flex;
+        flex-direction: column;
+        height: 300px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .slider_arrow {
+        display: none;
+    }
+    .section3_heading {
+        margin-bottom: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        position: relative;
+    }
+
+    .header_div {
+        position: relative;
+    }
+
+    .navigation_container {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: -100%;
+        width: 0%;
+        overflow: clip;
+        padding-top: 80px;
+        z-index: 1000;
+        background-color: #E1D4C9;
+        height: 100vh;
+        justify-content: top;
+        align-items: center;
+        font-size: 32px;
+        line-height: 40px;
+        row-gap: 60px;
+        transition: all 2s ease;
+    }
+
+    .navigation_container ul.switch {
+        width: 100%;
+        overflow-y: clip;
+        transform: translateX(-100%);
+    }
+}
+
+@media screen and (max-width: 610px) {
+    .heading_h1 {
+        font-size: 24px;
+    }
+    .heading_h1 > span {
+        font-size: 30px;
+    }
+    .propgram_description_txt {
+        font-size: 22px;
+    }
+}
+@media screen and (max-width: 705px) {
+    .course_card {
+        height: 290px;
+        width:300px;
+    }
+    .course_info_txt {
+        margin-top: 1.5rem;
+        gap: 1rem;
+    }
+
+    .course_info_txt > h5 {
+        font-size: 15px;
+    }
 }

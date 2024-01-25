@@ -39,7 +39,7 @@ const courses = [
     },
     {
         image: './assets/blockchain.webp',
-        courseName: 'Blockchain Fundamentals: Building a Solid Foundation',
+        courseName: 'Blockchain',
         status: 'რეგისტრაცია დასრულებულია',
         details: 'https://www.tbcacademy.ge/usaid/blockchain'
     },
@@ -167,3 +167,17 @@ document.addEventListener('scroll', (e) => {
         header.style.opacity = 0.9;
     }
 });
+
+// burger menu
+
+const burgerMenu = document.querySelector('.burger_menu');
+const bars = document.querySelectorAll('.burger_bar');
+const menu = document.querySelector('.header_unordered_list')
+
+burgerMenu.addEventListener('click', () => {
+    bars[0].classList.toggle('rotate_bar1')
+    bars[1].classList.toggle('rotate_bar2')
+    bars[2].classList.toggle('rotate_bar3')
+
+    menu.classList.toggle('switch');
+})
