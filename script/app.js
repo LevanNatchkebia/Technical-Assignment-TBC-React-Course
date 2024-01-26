@@ -156,6 +156,10 @@ acc.forEach((accordion, index) => {
     accordion.addEventListener('click', () => {
         faqPanel[index].classList.toggle('active_faq_btn');
         faqPanel[index].classList.toggle('show');
+        const svg = accordion.querySelector('svg');
+
+        svg.classList.toggle('svg_rotate')
+
     })
 })
 
