@@ -70,7 +70,7 @@ main {
     height: 21px;
     position: relative;
     cursor: pointer;
-    /* display: none; */
+    display: none;
 }
 
 .burger_bar {
@@ -86,12 +86,12 @@ main {
     width: 50%;
     top: 0;
     left: 0;
-    transform-origin: left;
 }
 
 .rotate_bar1 {
+    
     rotate: 45deg;
-    transform: translate(50%, 50%);
+    transform: translate(40%, 50%);
 }
 
 .bar2 {
@@ -106,12 +106,12 @@ main {
     width: 50%;
     bottom: 0;
     right: 0;
-    transform-origin: right;
 }
 
 .rotate_bar3 {
+    
     rotate: 45deg;
-    transform: translate(-50%, -50%);
+    transform: translate(-25%, -50%);
 }
 
 /* MAIN styles */
@@ -571,37 +571,44 @@ h2 {
 }
 
 @media screen and (max-width: 768px) {
-    .header {
-        position: relative;
-    }
 
-    .header_div {
-        position: relative;
-    }
+    .burger_menu {
+        display: block;
+        z-index: 1000;  
 
-    .navigation_container {
+    }
+    .navigation_container{
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100%;
+        z-index: 900;
+      }
+
+    .navigation_container.active_ul {
+        display: flex;
         flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: -100%;
-        width: 0%;
-        overflow: clip;
-        padding-top: 80px;
-        z-index: 1000;
-        background-color: #E1D4C9;
-        height: 100vh;
-        justify-content: top;
-        align-items: center;
-        font-size: 32px;
-        line-height: 40px;
-        row-gap: 60px;
-        transition: all 2s ease;
+        align-items: flex-end;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
     }
 
-    .navigation_container ul.switch {
-        width: 100%;
-        overflow-y: clip;
-        transform: translateX(-100%);
+    .header_unordered_list {
+        display: flex;
+        z-index: 901;
+        height: 100%;
+        flex-direction: column;
+        background-color: #1A1E1F;
+        width: 60%;
+        align-items: flex-end;
+        padding: 2rem;
+        gap: 0;
+    }
+
+    .navigation_lists {
+        margin-top: 4rem;
+        font-size: 2rem;
     }
 }
 

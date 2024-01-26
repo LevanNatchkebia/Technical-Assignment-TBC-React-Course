@@ -160,11 +160,11 @@ acc.forEach((accordion, index) => {
 })
 
 // header opacity 
-
+const header = document.querySelector('.header');
 document.addEventListener('scroll', (e) => {
-    const header = document.querySelector('.header');
     if (scrollY > 0) {
         header.style.opacity = 0.9;
+        console.log(screenY);
     }
 });
 
@@ -173,6 +173,8 @@ document.addEventListener('scroll', (e) => {
 const burgerMenu = document.querySelector('.burger_menu');
 const bars = document.querySelectorAll('.burger_bar');
 const menu = document.querySelector('.header_unordered_list')
+const points = document.querySelector('.navigation_lists');
+const navigationContainer = document.querySelector('.navigation_container');
 
 burgerMenu.addEventListener('click', () => {
     bars[0].classList.toggle('rotate_bar1')
@@ -180,4 +182,17 @@ burgerMenu.addEventListener('click', () => {
     bars[2].classList.toggle('rotate_bar3')
 
     menu.classList.toggle('switch');
+
+    navigationContainer.classList.toggle('active_ul');
+    
+    if (navigationContainer.classList.contains('active_ul'))  {
+        document.body.style.overflow = 'hidden';
+        header.style.opacity = 1;
+    }
+    else {
+        document.body.style.overflow = 'visible';
+        header.style.opacity = 0.9;
+    }
 })
+
+
