@@ -192,11 +192,32 @@ burgerMenu.addEventListener('click', () => {
     if (navigationContainer.classList.contains('active_ul'))  {
         document.body.style.overflow = 'hidden';
         header.style.opacity = 1;
+        setTimeout(() => {
+            navigationContainer.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+        },500)
     }
     else {
         document.body.style.overflow = 'visible';
         header.style.opacity = 0.9;
+        navigationContainer.style.backgroundColor = 'transparent';
     }
+
+    
 })
 
+// TERMS AND POLICY MODAL 
+document.querySelector('.terms_policy').addEventListener('click', () => {
+    const exampleDiv = document.querySelector('.terms_modal')
+    exampleDiv.classList.toggle('reveal');
+})
 
+document.addEventListener('DOMContentLoaded', () => {
+    const closeModal = document.querySelector('.fa-x');
+    closeModal.addEventListener('click', () => {
+        if(closeModal.classList.contains('reveal')) {
+            closeModal.classList.remove('reveal');
+            console.log('asdasd')
+        }
+    })
+
+})

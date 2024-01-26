@@ -515,10 +515,22 @@ h2 {
 
 .terms_policy {
     color: #DBDBDB;
-    transition: 0.3s ease-in-out;
-    font-size: 0.9em;
+    font-size: 1em;
+    text-align: left;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-family: 'Noto Sans Georgian", sans-serif';
+    cursor: pointer;
 }
-
+.fa-x {
+    color: gray;
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
 .terms_policy:hover {
     color: rgb(168, 168, 168);
 }
@@ -547,6 +559,58 @@ h2 {
     flex-direction: column;
     gap: 3rem;
 }
+.mobile, .mobile_all_faq  {
+    display: none;
+}
+
+
+
+/* TERMS MODAL */
+
+.terms_modal {
+    position: relative;
+    width: 700px;
+    height: 100%;
+    position: fixed;
+    right: -100%;
+    top: 0;
+    background-color: #2B2B2B;
+    transition: .5s ease-in-out;
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 5rem 2rem;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: red orange;
+}
+
+.reveal {
+    right: 0;
+}
+
+.terms_modal > h2 {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #8C8C8C;
+}
+.terms_modal > h4 {
+    color: #8C8C8C;
+}
+
+.terms_modal > p {
+    font-size: 0.9em;
+    line-height: 125%;
+    color: #8C8C8C;
+}
+
+.terms_modal::-webkit-scrollbar {
+    display: none;
+}
+
+
+
 
 /* Media queries to make responsive web */
 
@@ -558,6 +622,10 @@ h2 {
     }
     .course_card {
         width: 300px;
+    }
+
+    .terms_modal {
+        width: 500px;
     }
 }
 
@@ -588,13 +656,13 @@ h2 {
 
     }
     .navigation_container{
-        display: none;
+        /* display: none; */
         position: fixed;
         top: 0;
-        right: 0;
+        right: -100%;
         height: 100%;
         z-index: 900;
-        transition: 0.3s ease-in-out;
+        transition: 1s ease-in-out;
       }
 
     .navigation_container.active_ul {
@@ -602,7 +670,7 @@ h2 {
         flex-direction: column;
         align-items: flex-end;
         width: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
+        right: 0;
     }
 
     .header_unordered_list {
@@ -611,7 +679,7 @@ h2 {
         height: 100%;
         flex-direction: column;
         background-color: #1A1E1F;
-        width: 60%;
+        width: clamp(250px, 60%, 100%);
         align-items: flex-end;
         padding: 2rem;
         gap: 0;
@@ -635,7 +703,7 @@ h2 {
     .background_image {
         height: 217px;
     }
-  
+
 }
 
 @media screen and (max-width: 705px) {
@@ -683,6 +751,22 @@ h2 {
     .header, .section1_lower_part, .section2_learning_courses, .section3_project_partners, .section4_faq, .footer {
         padding: 1rem;
     }
+    .terms_modal {
+        width: 450px;
+    }
+}
+
+@media screen and (max-width:536px){
+    .desktop_all_faq  {
+        display: none;
+    }
+    .mobile_all_faq {
+        display: flex
+    }
+
+    .terms_modal{
+        width: 360px;
+    }
 }
 
 @media screen and (max-width:400px) {
@@ -693,4 +777,41 @@ h2 {
     .navigation_lists {
         font-size: 1.5em;
     }
+    .mobile {
+        display: block;
+    }
+    
+    .desktop {
+        display: none;
+    }
+
+    .footer_main_container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .new_structure {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .txt_us_mail {
+        width: 115px;
+        font-size: 14px;
+        padding: 1em;
+    }
+
+    .social_icons {
+        gap:2rem;
+    }
+    
+    .footer_social {
+        justify-content: center;
+        gap: 2rem;
+    }
+  
+    .terms_modal {
+        width: 300px;
+    }
+
 }
