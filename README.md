@@ -3,7 +3,7 @@
 ---
 
 ### Live link:
-(https://levannatchkebia.github.io/Technical-Assignment-TBC-React-Course/)
+https://levannatchkebia.github.io/Technical-Assignment-TBC-React-Course/
 
 ---
 
