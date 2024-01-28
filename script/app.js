@@ -232,10 +232,10 @@ burgerMenu.addEventListener('click', () => {
 
     window.addEventListener("click", (event) => {    
         if (event.target === navigationContainer) {
-            navigationContainer.classList.toggle('active_ul');
-            bars[0].classList.toggle('rotate_bar1');
-            bars[1].classList.toggle('rotate_bar2');
-            bars[2].classList.toggle('rotate_bar3');
+            navigationContainer.classList.remove('active_ul');
+            bars[0].classList.remove('rotate_bar1');
+            bars[1].classList.remove('rotate_bar2');
+            bars[2].classList.remove('rotate_bar3');
             document.body.style.overflow = 'visible';
         }
     })
